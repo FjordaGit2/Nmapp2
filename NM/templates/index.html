@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+    <title>Upload File and View Preview</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>Upload File</h1>
+    </div>
+    <div class="upload-form">
+        <label for="file" class="custom-button">Choose File</label>
+        <form method="post" enctype="multipart/form-data">
+            <input type="file" name="file" id="file" class="file-input" accept=".csv, .xlsx">
+            <input type="submit" value="Upload" class="custom-button">
+        </form>
+    </div>
+    {% if message %}
+        <p class="message">{{ message }}</p>
+    {% endif %}
+    {% if table %}
+        <div class="table-container">
+            <h2>File Preview</h2>
+            <form method="post" action="/">
+                <label>Select columns to display:</label><br>
+                {% for col in table.columns %}
+                    <input type="checkbox" name="selected_columns" value="{{ col }}" id="{{ col }}">
+                    <label for="{{ col }}">{{ col }}</label><br>
+                {% endfor %}
+                <input type="submit" value="Update Preview" class="custom-button">
+            </form>
+            {% if preview_table %}
+                <h2>Preview Table</h2>
+                {{ preview_table|safe }}
+            {% endif %}
+        </div>
+    {% endif %}
+</div>
+</body>
+</html>

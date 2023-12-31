@@ -1,0 +1,10 @@
+streamlit
+pandas
+plotly
+rpy2
+rbase
+networkx
+igraph
+python-igraph
+matplotlib
+networktools

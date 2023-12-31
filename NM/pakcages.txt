@@ -1,0 +1,9 @@
+networktools
+smacof
+MPsychoR
+psych
+eigenmodel
+dplyr
+NetworkComparisonTest
+rbase
+rbase-essentials
