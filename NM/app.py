@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import os
-os.environ['R_HOME'] = '/usr/lib/R'
+os.environ['R_HOME'] = 'C:\Program Files\R\R-4.3.2'
 import threading
 import rpy2.robjects as robjects
 import networkx as nx
